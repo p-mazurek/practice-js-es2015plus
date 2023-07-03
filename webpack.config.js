@@ -1,4 +1,4 @@
-const taskNumber = null;
+const taskNumber = '05';
 //numer przerabianego zadania
 
 const path = require('path');
@@ -6,6 +6,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // importuję odpowiedni plugin
 module.exports = {
+    mode: 'development',
     entry: `./${taskNumber}/app.js`,
     // definiuje plik wejściowy
     output: {
@@ -14,6 +15,7 @@ module.exports = {
         filename: 'app.min.js',
         // definiuję nazwę pliku wyjściowego
     },
+    devtool: 'source-map',
     target: "web", 
     // niezbędne do uruchomienia automatycznego odświeżania z webpack-dev-server@3
     // https://github.com/webpack/webpack-dev-server/issues/2758
@@ -28,6 +30,7 @@ module.exports = {
                 use: 'babel-loader',
                 // określam jaki [loader]
                 // ma być wykorzystany
+                
             }
         ]
         // obecnie brak dodatkowych ustawień
